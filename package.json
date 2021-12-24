@@ -1,0 +1,31 @@
+{
+	"name": "highcharts-tooltip-test",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/e965/highcharts-tooltip-test.git"
+	},
+	"scripts": {
+		"clean": "del-cli ./dist",
+		"start": "parcel src/index.html",
+		"build": "parcel build src/index.html --dist-dir dist --no-source-maps",
+		"copy-dataset": "cpy ./src/dataset/*.* ./dist/dataset",
+		"bundle": "npm run clean && npm run build && npm run copy-dataset"
+	},
+	"browserslist": [
+		"ie >= 11",
+		">0.2%",
+		"not dead",
+		"not op_mini all"
+	],
+	"dependencies": {
+		"highcharts": "9.3.2",
+		"promise-polyfill": "8.2.1",
+		"whatwg-fetch": "3.6.2"
+	},
+	"devDependencies": {
+		"cpy-cli": "3.1.1",
+		"del-cli": "4.0.1",
+		"parcel": "2.0.1"
+	}
+}
